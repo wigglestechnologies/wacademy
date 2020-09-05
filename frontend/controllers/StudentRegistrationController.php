@@ -73,6 +73,7 @@ class StudentRegistrationController extends Controller
             
             $username = Yii::$app->request->post()['StudentRegistration']['phoneNumber'];
             $email = Yii::$app->request->post()['SignupForm']['email'];
+            $password = 'student';
             $studentData = Yii::$app->request->post()['StudentRegistration'];
             if ($model->load($studentData) && $model->save()) {
                 return $this->redirect(['index']);
