@@ -1,53 +1,88 @@
 <?php
 
+use yii\helpers\Url;
+
 /* @var $this yii\web\View */
 
 $this->title = 'My Yii Application';
 ?>
-<div class="site-index">
 
-    <div class="jumbotron">
-        <h1>Congratulations!</h1>
-
-        <p class="lead">You have successfully created your Yii-powered application.</p>
-
-        <p><a class="btn btn-lg btn-success" href="http://www.yiiframework.com">Get started with Yii</a></p>
-    </div>
-
-    <div class="body-content">
-
-        <div class="row">
-            <div class="col-lg-4">
-                <h2>Heading</h2>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/doc/">Yii Documentation &raquo;</a></p>
-            </div>
-            <div class="col-lg-4">
-                <h2>Heading</h2>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/forum/">Yii Forum &raquo;</a></p>
-            </div>
-            <div class="col-lg-4">
-                <h2>Heading</h2>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/extensions/">Yii Extensions &raquo;</a></p>
-            </div>
-        </div>
-
-    </div>
-</div>
+	<!-- Masthead Start-->
+	<header class="masthead">
+		<img class="intro-promo__img" src="images/banner/banner-2.png" alt="img">
+		<div class="container">
+			<div class="row">				
+				<div class="col-lg-7 col-xl-6">
+					<div class="align-container">
+						<div class="align-container__item">
+							<h6 class="intro-promo__pre-title">Cursus</h6>
+							<h2 class="intro-promo__title">LMS &amp; Online <br>Courses Marketplace <br><span>HTML Template</span></h2>
+							<p class="intro-promo__subtitle">Cursus is an all-in-one solution for creating online education marketplaces like Udemy, Skillshare, Coursera, Youtube etc.</p>
+							<a class="button intro-promo__button" href="#demos">See demos</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+	<!-- Masthead End -->
+	<!-- Inner Pages Start -->
+	<section class="inner-demos" id="inner-pages">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="section_title">
+						<h2>Inner Pages Demos</h2>
+					</div>
+				</div>
+				<div class="col-md-12">
+					<div class="course_tabs">
+						<nav>
+							<div class="nav nav-tabs tab_crse justify-content-center" id="nav-tab" role="tablist">
+								<a class="nav-item nav-link active" id="nav-frontend-tab" data-toggle="tab" href="#nav-frontend" role="tab" aria-selected="true">Frontend Demo</a>
+								<a class="nav-item nav-link" id="nav-instructor-tab" data-toggle="tab" href="#nav-instructor" role="tab" aria-selected="false">Instructor Dashboard Demo</a>
+								<a class="nav-item nav-link" id="nav-student-tab" data-toggle="tab" href="#nav-student" role="tab" aria-selected="false">Student Dashboard Demo</a>
+							</div>
+						</nav>						
+					</div>
+					<div class="course_tab_content">
+						<div class="tab-content" id="nav-tabContent">
+							<div class="tab-pane fade show active" id="nav-frontend" role="tabpanel">
+								<div class="row">
+									<div class="col-lg-4 col-md-6">
+										<div class="demo-item">
+											<a href="http://gambolthemes.net/html-items/cursus_demo_f12/certification_test_view.html" class="demo-img" target="_blank">
+												<img class="img-fluid" src="images/inner_pages/img-24.jpg" alt="">
+											</a>
+											<p class="demo-title">Certification Test Page</p>
+											<a href="http://gambolthemes.net/html-items/cursus_demo_f12/certification_test_view.html" class="demo-link" target="_blank">Live Preview</a>
+										</div>
+									</div>
+									<div class="col-lg-4 col-md-6">
+										<div class="demo-item">
+											<a href="http://gambolthemes.net/html-items/cursus_demo_f12/certification_test__result.html" class="demo-img" target="_blank">
+												<img class="img-fluid" src="images/inner_pages/img-25.jpg" alt="">
+											</a>
+											<p class="demo-title">Certification Test Result Page</p>
+											<a href="http://gambolthemes.net/html-items/cursus_demo_f12/certification_test__result.html" class="demo-link" target="_blank">Live Preview</a>
+										</div>
+									</div>
+									<div class="col-lg-4 col-md-6">
+										<div class="demo-item">
+											<a href="http://gambolthemes.net/html-items/cursus_demo_f12/membership.html" class="demo-img" target="_blank">
+												<img class="img-fluid" src="images/inner_pages/img-26.jpg" alt="">
+											</a>
+											<p class="demo-title">Paid Membership Page</p>
+											<a href="http://gambolthemes.net/html-items/cursus_demo_f12/membership.html" class="demo-link" target="_blank">Live Preview</a>
+										</div>
+									</div>
+								</div>
+							</div>						
+						</div>
+					</div>
+				</div>		
+			</div>
+		</div>
+	</section>
+	<!-- Inner Pages End -->
+	
