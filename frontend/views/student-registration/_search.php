@@ -17,15 +17,13 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'studentRegistrationId') ?>
 
-    <?= $form->field($model, 'userId') ?>
-
     <?= $form->field($model, 'fullName') ?>
 
     <?= $form->field($model, 'phoneCode') ?>
 
     <?= $form->field($model, 'phoneNumber') ?>
 
-    <?php // echo $form->field($model, 'email') ?>
+    <?= $form->field($model, 'email') ?>
 
     <?php // echo $form->field($model, 'courseId') ?>
 

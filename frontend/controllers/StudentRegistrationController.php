@@ -8,8 +8,6 @@ use common\models\StudentRegistrationSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
-use frontend\models\SignupForm;
-use yii\helpers\ArrayHelper;
 
 /**
  * StudentRegistrationController implements the CRUD actions for StudentRegistration model.
@@ -67,24 +65,13 @@ class StudentRegistrationController extends Controller
     public function actionCreate()
     {
         $model = new StudentRegistration();
-        $signupModel = new SignupForm();
 
-        if (Yii::$app->request->post()) {
-            
-            $username = Yii::$app->request->post()['StudentRegistration']['phoneNumber'];
-            $email = Yii::$app->request->post()['SignupForm']['email'];
-            $password = 'student';
-            $studentData = Yii::$app->request->post()['StudentRegistration'];
-            if ($model->load($studentData) && $model->save()) {
-                return $this->redirect(['index']);
-            }             
-            $studentData = array('StudentRegistration'=>ArrayHelper::merge($studentData, ['userId'=>$signupModel->autoSignup($username,$email,$signupModel)]));
-            
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            return $this->redirect(['view', 'id' => $model->studentRegistrationId]);
         }
 
         return $this->render('create', [
             'model' => $model,
-            'signupModel'=>$signupModel,
         ]);
     }
 

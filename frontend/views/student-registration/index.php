@@ -27,11 +27,10 @@ $this->params['breadcrumbs'][] = $this->title;
             ['class' => 'yii\grid\SerialColumn'],
 
             'studentRegistrationId',
-            'userId',
             'fullName',
             'phoneCode',
             'phoneNumber',
-            //'email:email',
+            'email:email',
             //'courseId',
             //'scholarship',
             //'amountId',

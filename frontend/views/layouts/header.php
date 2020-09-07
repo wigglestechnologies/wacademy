@@ -3,7 +3,7 @@ use yii\helpers\Url;
 
 ?>
 <!-- Navigation Start -->
-	<nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
+	<nav class="navbar navbar-expand-lg navbar-dark fixed-top py-3" id="mainNav">
 		<div class="container-fluid">
 			<a class="navbar-brand logo_brand js-scroll-trigger" href="#page-top">
 				<img src="images/main_logo.svg" alt="">

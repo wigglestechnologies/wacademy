@@ -9,13 +9,26 @@ $this->title = 'Create Student Registration';
 $this->params['breadcrumbs'][] = ['label' => 'Student Registrations', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="student-registration-create">
+<div class="main">
 
-    <h1><?= Html::encode($this->title) ?></h1>
+        <!-- Sign up form -->
+        <section class="signup">
+            <div class="container">
+                <div class="signup-content">
+                    <div class="signup-form">
+                        <h2 class="form-title">Register</h2>
+                        <?= $this->render('_form', [
+                            'model' => $model,
+                        ]) ?>
+                    </div>
+                    <div class="signup-image">
+                        <a href="#" class="signup-image-link">I have already Registered.LogIn </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+  </div>
 
-    <?= $this->render('_form', [
-        'model' => $model,
-        'signupModel'=>$signupModel
-    ]) ?>
+<?php
 
-</div>
+

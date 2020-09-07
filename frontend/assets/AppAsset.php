@@ -17,6 +17,9 @@ class AppAsset extends AssetBundle
         'css/site.css',
         'css/style.css',
         'css/responsive.css',
+        'css/register.css',
+        
+        'fonts/material-icon/css/material-design-iconic-font.min.css',
         
         // Vendor Stylesheets
         'vendor/fontawesome-free/css/all.min.css',
@@ -26,9 +29,19 @@ class AppAsset extends AssetBundle
         'vendor/semantic/semantic.min.css',
         
         // Third party plugin CSS
-        '../../../cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css',
+        'cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css',
     ];
     public $js = [
+        'js/jquery-3.3.1.min.js',
+        'vendor/bootstrap/js/bootstrap.bundle.min.js',
+        'vendor/OwlCarousel/owl.carousel.js',
+        'vendor/semantic/semantic.min.js',
+        'js/custom.js',
+        'js/scroll-scripts.js',
+        
+        'cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js',
+        'cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js',
+        
     ];
     public $depends = [
         //'yii\web\YiiAsset',

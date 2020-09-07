@@ -2,8 +2,8 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
-use common\models\Country;
 use yii\helpers\ArrayHelper;
+use common\models\Country;
 use common\models\AmountRaise;
 use common\models\Course;
 
@@ -18,11 +18,16 @@ use common\models\Course;
 
     <?= $form->field($model, 'fullName')->textInput(['maxlength' => true]) ?>
     
-    <?= $form->field($signupModel, 'email')->textInput(['autofocus' => 'true'])?>
+    <div class="row">
+		<div class="col-md-4">
+			<?= $form->field($model, 'phoneCode')->dropDownList(ArrayHelper::map(Country::find()->all(), 'couPhoneCode', 'countryName'),['prompt'=>'Select...'] )?>
+		</div>
+		<div class="col-md-8">
+			    <?= $form->field($model, 'phoneNumber')->textInput(['maxlength' => true]) ?>		
+		</div>
+	</div>
 
-    <?= $form->field($model, 'phoneCode')->dropDownList(ArrayHelper::map(Country::find()->all(), 'couPhoneCode', 'countryName'),['prompt'=>'Select...'] )?>
-
-    <?= $form->field($model, 'phoneNumber')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'email')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'courseId')->dropDownList(ArrayHelper::map(Course::find()->all(), 'courseId', 'courseName'),['prompt'=>'Select...'] )?>
 
@@ -31,7 +36,7 @@ use common\models\Course;
     <?= $form->field($model, 'amountId')->dropDownList(ArrayHelper::map(AmountRaise::find()->all(), 'amountId', 'amountRaised'),['prompt'=>'Select...'] )?>
 
     <div class="form-group">
-        <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
+        <?= Html::submitButton('Register', ['class' => 'form-submit']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>

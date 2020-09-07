@@ -8,19 +8,17 @@ use Yii;
  * This is the model class for table "studentRegistration".
  *
  * @property int $studentRegistrationId
- * @property int $userId
  * @property string $fullName
  * @property int $phoneCode
  * @property string $phoneNumber
  * @property string $email
  * @property int $courseId
  * @property int $scholarship
- * @property int $amountId
+ * @property int|null $amountId
  *
  * @property AmountRaise $amount
  * @property Course $course
  * @property Country $phoneCode0
- * @property User $user
  */
 class StudentRegistration extends \yii\db\ActiveRecord
 {
@@ -38,13 +36,12 @@ class StudentRegistration extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['userId', 'fullName', 'phoneCode', 'phoneNumber', 'courseId', 'scholarship'], 'required'],
-            [['userId', 'phoneCode', 'courseId', 'scholarship', 'amountId'], 'integer'],
+            [['fullName', 'phoneCode', 'phoneNumber', 'email', 'courseId', 'scholarship'], 'required'],
+            [['phoneCode', 'courseId', 'scholarship', 'amountId'], 'integer'],
             [['fullName', 'phoneNumber', 'email'], 'string', 'max' => 255],
             [['amountId'], 'exist', 'skipOnError' => true, 'targetClass' => AmountRaise::className(), 'targetAttribute' => ['amountId' => 'amountId']],
             [['courseId'], 'exist', 'skipOnError' => true, 'targetClass' => Course::className(), 'targetAttribute' => ['courseId' => 'courseId']],
             [['phoneCode'], 'exist', 'skipOnError' => true, 'targetClass' => Country::className(), 'targetAttribute' => ['phoneCode' => 'countryId']],
-            [['userId'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['userId' => 'id']],
         ];
     }
 
@@ -55,14 +52,13 @@ class StudentRegistration extends \yii\db\ActiveRecord
     {
         return [
             'studentRegistrationId' => 'Student Registration ID',
-            'userId' => 'User ',
             'fullName' => 'Full Name',
             'phoneCode' => 'Phone Code',
             'phoneNumber' => 'Phone Number',
             'email' => 'Email',
-            'courseId' => 'Course',
-            'scholarship' => 'Would you like a scholarship?',
-            'amountId' => 'How much money can u raise? ',
+            'courseId' => 'Course ID',
+            'scholarship' => 'Scholarship',
+            'amountId' => 'Amount ID',
         ];
     }
 
@@ -94,15 +90,5 @@ class StudentRegistration extends \yii\db\ActiveRecord
     public function getPhoneCode0()
     {
         return $this->hasOne(Country::className(), ['countryId' => 'phoneCode']);
-    }
-
-    /**
-     * Gets query for [[User]].
-     *
-     * @return \yii\db\ActiveQuery
-     */
-    public function getUser()
-    {
-        return $this->hasOne(User::className(), ['id' => 'userId']);
     }
 }

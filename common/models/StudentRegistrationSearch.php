@@ -17,7 +17,7 @@ class StudentRegistrationSearch extends StudentRegistration
     public function rules()
     {
         return [
-            [['studentRegistrationId', 'userId', 'phoneCode', 'courseId', 'scholarship', 'amountId'], 'integer'],
+            [['studentRegistrationId', 'phoneCode', 'courseId', 'scholarship', 'amountId'], 'integer'],
             [['fullName', 'phoneNumber', 'email'], 'safe'],
         ];
     }
@@ -59,7 +59,6 @@ class StudentRegistrationSearch extends StudentRegistration
         // grid filtering conditions
         $query->andFilterWhere([
             'studentRegistrationId' => $this->studentRegistrationId,
-            'userId' => $this->userId,
             'phoneCode' => $this->phoneCode,
             'courseId' => $this->courseId,
             'scholarship' => $this->scholarship,
