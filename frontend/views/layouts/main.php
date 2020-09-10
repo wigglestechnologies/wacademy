@@ -25,10 +25,8 @@ AppAsset::register($this);
 </head>
 <body id="page-top">
 <?php $this->beginBody() ?>
-
 <!-- Header Start-->
 <?= $this->render('header.php')?>
-
         <?= $content ?>
   <!-- Footer Start -->
 	<footer class="footer">

@@ -9,8 +9,9 @@ use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
 use frontend\assets\AppAsset;
 use common\widgets\Alert;
+use frontend\assets\RegisterAsset;
 
-AppAsset::register($this);
+RegisterAsset::register($this);
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
@@ -25,7 +26,7 @@ AppAsset::register($this);
 </head>
 <body>
 <?php $this->beginBody() ?>
-
+<?= $this->render('applyheader.php')?>
         <?= $content ?>
         
 <?php $this->endBody() ?>

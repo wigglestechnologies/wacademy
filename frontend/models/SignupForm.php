@@ -59,33 +59,6 @@ class SignupForm extends Model
     }
 
     /**
-     *
-     * @param unknown $username
-     * @param unknown $email
-     * @param unknown $password
-     * @param unknown $signupModel
-     * @return NULL|number
-     */
-    
-    public function autoSignup($username,$email,$signupModel){
-        $password = $this->generatePassword();
-        $userData = array('SignupForm'=>['username'=>$username,'email'=>$email,'password'=>$password]);
-        $signupModel->load($userData);
-        if (!$this->validate()) {
-            return null;
-        }
-        
-        $user = new User();
-        $user->username = $username;
-        $user->email = $email;
-        $user->setPassword($password);
-        $user->generateAuthKey();
-        $user->generateEmailVerificationToken();
-        $user->save() && $this->sendEmail($user);
-        return $user->id;
-        
-    }
-    /**
      * Sends confirmation email to user
      * @param User $user user model to with email should be send
      * @return bool whether the email was sent

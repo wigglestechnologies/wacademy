@@ -3,17 +3,18 @@
 namespace frontend\controllers;
 
 use Yii;
-use common\models\StudentRegistration;
-use common\models\StudentRegistrationSearch;
+use common\models\StudentApplication;
+use common\models\StudentApplicationSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * StudentRegistrationController implements the CRUD actions for StudentRegistration model.
+ * StudentApplicationController implements the CRUD actions for StudentApplication model.
  */
-class StudentRegistrationController extends Controller
+class StudentApplicationController extends Controller
 {
+    public $layout = 'auth';
     /**
      * {@inheritdoc}
      */
@@ -29,23 +30,26 @@ class StudentRegistrationController extends Controller
         ];
     }
 
-    /**
-     * Lists all StudentRegistration models.
+     /**
+     * Creates a new StudentApplication model.
+     * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionIndex()
     {
-        $searchModel = new StudentRegistrationSearch();
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
-
-        return $this->render('index', [
-            'searchModel' => $searchModel,
-            'dataProvider' => $dataProvider,
+        $model = new StudentApplication();
+        
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            return $this->redirect(['thanks']);
+        }
+        
+        return $this->render('create', [
+            'model' => $model,
         ]);
     }
 
     /**
-     * Displays a single StudentRegistration model.
+     * Displays a single StudentApplication model.
      * @param integer $id
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
@@ -57,17 +61,21 @@ class StudentRegistrationController extends Controller
         ]);
     }
 
+    public function actionThanks()
+    {
+        return $this->render('thanks');
+    }
     /**
-     * Creates a new StudentRegistration model.
+     * Creates a new StudentApplication model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new StudentRegistration();
+        $model = new StudentApplication();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->studentRegistrationId]);
+            return $this->redirect(['thanks']);
         }
 
         return $this->render('create', [
@@ -76,7 +84,7 @@ class StudentRegistrationController extends Controller
     }
 
     /**
-     * Updates an existing StudentRegistration model.
+     * Updates an existing StudentApplication model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
      * @return mixed
@@ -87,7 +95,7 @@ class StudentRegistrationController extends Controller
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->studentRegistrationId]);
+            return $this->redirect(['view', 'id' => $model->studentApplicationId]);
         }
 
         return $this->render('update', [
@@ -96,7 +104,7 @@ class StudentRegistrationController extends Controller
     }
 
     /**
-     * Deletes an existing StudentRegistration model.
+     * Deletes an existing StudentApplication model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
@@ -110,15 +118,15 @@ class StudentRegistrationController extends Controller
     }
 
     /**
-     * Finds the StudentRegistration model based on its primary key value.
+     * Finds the StudentApplication model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return StudentRegistration the loaded model
+     * @return StudentApplication the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = StudentRegistration::findOne($id)) !== null) {
+        if (($model = StudentApplication::findOne($id)) !== null) {
             return $model;
         }
 

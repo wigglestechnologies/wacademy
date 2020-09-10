@@ -3,10 +3,10 @@
 use yii\helpers\Html;
 
 /* @var $this yii\web\View */
-/* @var $model common\models\StudentRegistration */
+/* @var $model common\models\StudentApplication */
 
-$this->title = 'Create Student Registration';
-$this->params['breadcrumbs'][] = ['label' => 'Student Registrations', 'url' => ['index']];
+$this->title = 'Create Student Application';
+$this->params['breadcrumbs'][] = ['label' => 'Student Applications', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="main">
@@ -15,7 +15,7 @@ $this->params['breadcrumbs'][] = $this->title;
             <!-- <img src="images/signup-bg.jpg" alt=""> -->
             <div class="container">
                 <div class="signup-content">
-                    <h2 class="form-title">Register</h2>
+                    <h2 class="form-title">Student Application</h2>
                         <?= $this->render('_form', [
                             'model' => $model,
                         ]) ?>
@@ -24,5 +24,3 @@ $this->params['breadcrumbs'][] = $this->title;
         </section>
         
   </div>
-
-

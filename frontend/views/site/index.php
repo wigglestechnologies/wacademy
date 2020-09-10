@@ -4,12 +4,11 @@ use yii\helpers\Url;
 
 /* @var $this yii\web\View */
 
-$this->title = 'My Yii Application';
+$this->title = 'Kazini';
 ?>
-
 	<!-- Masthead Start-->
 	<header class="masthead">
-		<img class="intro-promo__img" src="images/banner/banner-2.png" alt="img">
+		<img class="intro-promo__img" src="<?= Yii::$app->request->baseUrl;?>/images/banner/banner-2.png" alt="img">
 		<div class="container">
 			<div class="row">				
 				<div class="col-lg-7 col-xl-6">
@@ -18,7 +17,7 @@ $this->title = 'My Yii Application';
 							<h6 class="intro-promo__pre-title">Cursus</h6>
 							<h2 class="intro-promo__title">LMS &amp; Online <br>Courses Marketplace <br><span>HTML Template</span></h2>
 							<p class="intro-promo__subtitle">Cursus is an all-in-one solution for creating online education marketplaces like Udemy, Skillshare, Coursera, Youtube etc.</p>
-							<a class="button intro-promo__button" href="#demos">See demos</a>
+							<a class="button intro-promo__button" href="<?= Url::to(['student-application/create'])?>">Application</a>
 						</div>
 					</div>
 				</div>
@@ -52,27 +51,27 @@ $this->title = 'My Yii Application';
 									<div class="col-lg-4 col-md-6">
 										<div class="demo-item">
 											<a href="http://gambolthemes.net/html-items/cursus_demo_f12/certification_test_view.html" class="demo-img" target="_blank">
-												<img class="img-fluid" src="images/inner_pages/img-24.jpg" alt="">
+												<img class="img-fluid" src="<?= Yii::$app->request->baseUrl;?>/images/inner_pages/img-24.jpg" alt="">
 											</a>
-											<p class="demo-title">Certification Test Page</p>
+											<p class="demo-title">Web & Mobile Development</p>
 											<a href="http://gambolthemes.net/html-items/cursus_demo_f12/certification_test_view.html" class="demo-link" target="_blank">Live Preview</a>
 										</div>
 									</div>
 									<div class="col-lg-4 col-md-6">
 										<div class="demo-item">
 											<a href="http://gambolthemes.net/html-items/cursus_demo_f12/certification_test__result.html" class="demo-img" target="_blank">
-												<img class="img-fluid" src="images/inner_pages/img-25.jpg" alt="">
+												<img class="img-fluid" src="<?= Yii::$app->request->baseUrl;?>/images/inner_pages/img-25.jpg" alt="">
 											</a>
-											<p class="demo-title">Certification Test Result Page</p>
+											<p class="demo-title">Data Science</p>
 											<a href="http://gambolthemes.net/html-items/cursus_demo_f12/certification_test__result.html" class="demo-link" target="_blank">Live Preview</a>
 										</div>
 									</div>
 									<div class="col-lg-4 col-md-6">
 										<div class="demo-item">
 											<a href="http://gambolthemes.net/html-items/cursus_demo_f12/membership.html" class="demo-img" target="_blank">
-												<img class="img-fluid" src="images/inner_pages/img-26.jpg" alt="">
+												<img class="img-fluid" src="<?= Yii::$app->request->baseUrl;?>/images/inner_pages/img-26.jpg" alt="">
 											</a>
-											<p class="demo-title">Paid Membership Page</p>
+											<p class="demo-title">Digital Marketing</p>
 											<a href="http://gambolthemes.net/html-items/cursus_demo_f12/membership.html" class="demo-link" target="_blank">Live Preview</a>
 										</div>
 									</div>

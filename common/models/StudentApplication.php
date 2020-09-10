@@ -5,9 +5,9 @@ namespace common\models;
 use Yii;
 
 /**
- * This is the model class for table "studentRegistration".
+ * This is the model class for table "studentApplication".
  *
- * @property int $studentRegistrationId
+ * @property int $studentApplicationId
  * @property string $fullName
  * @property int $phoneCode
  * @property string $phoneNumber
@@ -20,14 +20,14 @@ use Yii;
  * @property Course $course
  * @property Country $phoneCode0
  */
-class StudentRegistration extends \yii\db\ActiveRecord
+class StudentApplication extends \yii\db\ActiveRecord
 {
     /**
      * {@inheritdoc}
      */
     public static function tableName()
     {
-        return 'studentRegistration';
+        return 'studentApplication';
     }
 
     /**
@@ -51,7 +51,7 @@ class StudentRegistration extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'studentRegistrationId' => 'Student Registration ID',
+            'studentApplicationId' => 'Student Application ID',
             'fullName' => 'Full Name',
             'phoneCode' => 'Phone Code',
             'phoneNumber' => 'Phone Number',

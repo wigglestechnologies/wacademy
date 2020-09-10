@@ -14,12 +14,9 @@ class AppAsset extends AssetBundle
     public $css = [
         'http://fonts.googleapis.com/css?family=Roboto:400,700,500',
         'vendor/unicons-2.0.1/css/unicons.css',
-        'css/site.css',
+        //'css/site.css',
         'css/style.css',
         'css/responsive.css',
-        'css/register.css',
-        
-        'fonts/material-icon/css/material-design-iconic-font.min.css',
         
         // Vendor Stylesheets
         'vendor/fontawesome-free/css/all.min.css',

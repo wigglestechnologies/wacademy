@@ -11,12 +11,11 @@ use yii\helpers\Url;
 			<div class="collapse navbar-collapse" id="navbarResponsive">
 				<ul class="navbar-nav mlt-auto my-2 my-lg-0">
 					<li class="nav-item"><a class="nav-link js-scroll-trigger" href="#">Home</a></li>
-					<li class="nav-item"><a class="nav-link js-scroll-trigger" href=#">Contact</a></li>
+					<li class="nav-item"><a class="nav-link js-scroll-trigger" href="#">Contact</a></li>
 					<li class="nav-item"><a class="nav-link js-scroll-trigger" href="#">About Us</a></li>
 					<li class="nav-item"><a class="nav-link js-scroll-trigger" href="#features">Courses</a></li>
 				</ul>
 			</div>
-			<a class="buy_btn" href="<?= Url::to(['student-application/create'])?>" target="_blank">Application</a>
 		</div>
 	</nav>
 	<!-- Navigation End -->

@@ -4,12 +4,12 @@ namespace common\models;
 
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use common\models\StudentRegistration;
+use common\models\StudentApplication;
 
 /**
- * StudentRegistrationSearch represents the model behind the search form of `common\models\StudentRegistration`.
+ * StudentApplicationSearch represents the model behind the search form of `common\models\StudentApplication`.
  */
-class StudentRegistrationSearch extends StudentRegistration
+class StudentApplicationSearch extends StudentApplication
 {
     /**
      * {@inheritdoc}
@@ -17,7 +17,7 @@ class StudentRegistrationSearch extends StudentRegistration
     public function rules()
     {
         return [
-            [['studentRegistrationId', 'phoneCode', 'courseId', 'scholarship', 'amountId'], 'integer'],
+            [['studentApplicationId', 'phoneCode', 'courseId', 'scholarship', 'amountId'], 'integer'],
             [['fullName', 'phoneNumber', 'email'], 'safe'],
         ];
     }
@@ -40,7 +40,7 @@ class StudentRegistrationSearch extends StudentRegistration
      */
     public function search($params)
     {
-        $query = StudentRegistration::find();
+        $query = StudentApplication::find();
 
         // add conditions that should always apply here
 
@@ -58,7 +58,7 @@ class StudentRegistrationSearch extends StudentRegistration
 
         // grid filtering conditions
         $query->andFilterWhere([
-            'studentRegistrationId' => $this->studentRegistrationId,
+            'studentApplicationId' => $this->studentApplicationId,
             'phoneCode' => $this->phoneCode,
             'courseId' => $this->courseId,
             'scholarship' => $this->scholarship,
