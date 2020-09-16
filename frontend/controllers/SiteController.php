@@ -8,7 +8,7 @@ use yii\base\InvalidArgumentException;
 use yii\web\BadRequestHttpException;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
-use yii\filters\AccessControl;
+use yii2mod\rbac\filters\AccessControl;
 use common\models\LoginForm;
 use frontend\models\PasswordResetRequestForm;
 use frontend\models\ResetPasswordForm;
@@ -45,7 +45,7 @@ class SiteController extends Controller
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [
-                    'logout' => ['post'],
+                    'logout' => ['get'],
                 ],
             ],
         ];
@@ -74,6 +74,12 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
+        if(!Yii::$app->user->isGuest){
+            if(Yii::$app->user->can('tutor')){
+                return $this -> redirect('tutor/default/index');
+            }
+            return $this -> redirect('student/default/index');
+        }
         return $this->render('index');
     }
 
@@ -84,9 +90,9 @@ class SiteController extends Controller
      */
     public function actionLogin()
     {
-        if (!Yii::$app->user->isGuest) {
+/*         if (!Yii::$app->user->isGuest) {
             return $this->goHome();
-        }
+        } */
 
         $model = new LoginForm();
         if ($model->load(Yii::$app->request->post()) && $model->login()) {

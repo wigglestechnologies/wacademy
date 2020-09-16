@@ -21,6 +21,11 @@ return [
             'namespace' => 'common\fixtures',
           ],
     ],
+    'modules' => [
+        'rbac' => [
+            'class' => 'yii2mod\rbac\Module',
+        ],
+    ],
     'components' => [
         'log' => [
             'targets' => [
@@ -29,6 +34,10 @@ return [
                     'levels' => ['error', 'warning'],
                 ],
             ],
+        ],
+        'authManager' => [
+            'class' => 'yii\rbac\DbManager',
+            'defaultRoles' => ['guest', 'user'],
         ],
     ],
     'params' => $params,

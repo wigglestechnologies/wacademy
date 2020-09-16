@@ -34,14 +34,13 @@ $('.enable.button')
 
 
 // Home Live Stream
-$('.used_technologies').owlCarousel({
-	loop:true,
-    margin:30,
-	nav:false,
+$('.live_stream').owlCarousel({
+	items:10,
+	loop:false,
+	margin:10,
+	nav:true,
 	dots:false,
-    autoplay:true,
-    autoplayTimeout: 3000,
-    autoplayHoverPause:true,
+	navText: ["<i class='uil uil-angle-left'></i>", "<i class='uil uil-angle-right'></i>"],
 	responsive:{
 		0:{
 			items:2
@@ -50,13 +49,13 @@ $('.used_technologies').owlCarousel({
 			items:3
 		},
 		1000:{
-			items:4
+			items:3
 		},
 		1200:{
-			items:4
+			items:5
 		},
 		1400:{
-			items:4
+			items:6
 		}
 	}
 })
@@ -77,7 +76,34 @@ $('.featured_courses').owlCarousel({
 			items:2
 		},
 		1000:{
+			items:1
+		},
+		1200:{
 			items:2
+		},
+		1400:{
+			items:3
+		}
+	}
+})
+
+// Featured Courses home
+$('.top_instrutors').owlCarousel({
+	items:10,
+	loop:false,
+	margin:20,
+	nav:true,
+	dots:false,
+	navText: ["<i class='uil uil-angle-left'></i>", "<i class='uil uil-angle-right'></i>"],
+	responsive:{
+		0:{
+			items:1
+		},
+		600:{
+			items:2
+		},
+		1000:{
+			items:1
 		},
 		1200:{
 			items:2
@@ -141,18 +167,6 @@ $('.feature_careers').owlCarousel({
 		}
 	}
 })
-
-// Subscribe Btn
-$('.subscribe-btn').click(function() {
-  $(this).text(function(_, text) {
-    return text === "Subscribe" ? "Subscribed" : "Subscribe";
-  });
-  if($(this).text() == "Subscribe") {
-    $(this).removeClass('Subscribed-btn');
-  } else if($(this).text() == "Subscribed") {
-    $(this).addClass('Subscribed-btn');
-  }
-});
 
 /*Floating Code for Iframe Start*/
 if (jQuery('iframe[src*="https://www.youtube.com/embed/"],iframe[src*="https://player.vimeo.com/"],iframe[src*="https://player.vimeo.com/"]').length > 0) {
@@ -225,4 +239,17 @@ $('input[name="paymentmethod"]').on('click', function () {
 	$('[data-method="' + $value + '"]').slideDown();
 });
 
+
+// Right Click Disable
+window.oncontextmenu = function () {
+	return false;
+}
+$(document).keydown(function (event) {
+	if (event.keyCode == 123) {
+		return false;
+	}
+	else if ((event.ctrlKey && event.shiftKey && event.keyCode == 73) || (event.ctrlKey && event.shiftKey && event.keyCode == 74)) {
+		return false;
+	}
+});
 
